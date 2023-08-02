@@ -1,0 +1,131 @@
+using System;
+using System.Threading;
+
+namespace HolaMundo
+{
+    class Program
+    {
+        //variable para mostrar en resultado....
+        private static int resultado = 0;
+        //variable para igualar opcion de calculo....
+        private static int opcionCalculo = 0;
+        static void Main(string[] args)
+        {
+            Start();
+        }
+
+        private static void Start()
+        {
+            int opcion = 0;
+            
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("              Calculadora el Jefe.");
+                Console.WriteLine("");
+                Console.WriteLine("Elija una opción:");
+                Console.WriteLine("");
+                Console.WriteLine("1. Calcular"); 
+                Console.WriteLine("2. Mostrar Resultado");
+                Console.WriteLine("3. Salir");
+                Console.Write("Opción:");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        Calcular();
+                        break;
+                    case 2:
+                        MostrarResultado(resultado, opcionCalculo);
+                        break;
+                    case 3:
+                        opcion = 3;
+                        break;
+                    default:
+                        Console.WriteLine("No se cumple ninguna opción.");
+                        break;
+                }
+
+            }
+            while (opcion!=3);
+        }
+
+        private static void Calcular()
+        {
+            Console.Clear();
+            resultado = 0;
+            opcionCalculo = 0;
+            int opcion = 0;
+
+            Console.WriteLine("             Elija una opción");
+            Console.WriteLine("1. Sumar");
+            Console.WriteLine("2. Restar");
+            Console.WriteLine("3. Multiplicar");
+            Console.WriteLine("4. Dividir");
+            Console.Write("Opción:");
+            opcion = Convert.ToInt32(Console.ReadLine());
+            opcionCalculo = opcion;
+
+            switch (opcion)
+            {
+                case 1:
+                    opcionCalculo = opcion;
+                    resultado = getNumero1() + getNumero2();
+                    break;
+                case 2:
+                    opcionCalculo = opcion;
+                    resultado = getNumero1() - getNumero2();
+                    break;
+                case 3:
+                    opcionCalculo = opcion;
+                    resultado = getNumero1() * getNumero2();
+                    break;
+                case 4:
+                    opcionCalculo = opcion;
+                    resultado = getNumero1() / getNumero2();
+                    break;
+                default:
+                    Console.WriteLine("Brutooooo....");
+                    break;
+            }
+            Console.ReadKey();
+        }
+
+        private static int getNumero1()
+        {
+            Console.Write("\nEscriba un numero 1:");
+            int numero = Convert.ToInt32(Console.ReadLine());
+            return numero;
+        }
+
+        private static int getNumero2()
+        {
+            Console.Write("\nEscriba un numero 2:");
+            int numero = Convert.ToInt32(Console.ReadLine());
+            return numero;
+        }
+
+        private static void MostrarResultado(int resultado, int opcion)
+        {
+            Console.Clear();
+           if(opcion == 1)
+           {
+                Console.WriteLine("El resultado de la suma es:" + resultado);
+           }
+            if (opcion == 2)
+            {
+                Console.WriteLine("El resultado de la resta es:" + resultado);
+            }
+            if (opcion == 3)
+            {
+                Console.WriteLine("El resultado de la multiplicación es:" + resultado);
+            }
+            if (opcion == 4)
+            {
+                Console.WriteLine("El resultado de la división es:" + resultado);
+            }
+            Console.ReadKey();
+        }
+    }
+}

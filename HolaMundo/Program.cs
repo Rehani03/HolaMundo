@@ -8,7 +8,7 @@ namespace HolaMundo
     {   
         static void Main(string[] args)
         {
-
+            //Nombre
             getNames();
              //OpenFile();
             //WriteFile();

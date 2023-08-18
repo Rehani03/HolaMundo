@@ -9,7 +9,56 @@ namespace HolaMundo
     {   
         static void Main(string[] args)
         {
-            
+            Pila();
+        }
+
+        private static void Cola()
+        {
+            var palabra = string.Empty;
+
+            Queue cola = new Queue();
+            cola.Enqueue("Hola");
+            cola.Enqueue("soy");
+            cola.Enqueue("Angel");
+
+            for (int i = 0; i <3; i++)
+            {
+                palabra = (string)cola.Dequeue();
+                Console.WriteLine(palabra);
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void Pila()
+        {
+            var palabra = string.Empty;
+
+            Stack pila = new Stack();
+            pila.Push("Hola");
+            pila.Push("soy");
+            pila.Push("Angel");
+
+            Console.WriteLine(pila.Contains("soy")); //Sirve para saber si contiene ese elemento devuelve booleano
+          //pila.Clear(); //Este metodo sirve para borrar la pila
+         // var arreglo = pila.ToArray(); //srive para convertir a un array
+
+            Console.WriteLine(pila.Count);
+
+            for (int i = 0; i < 3; i++)
+            {
+                palabra = (string)pila.Pop();
+                Console.WriteLine(palabra);
+            }
+
+            //for (int i = 0; i < arreglo.Length; i++)
+            //{
+            //    Console.WriteLine("Datos:" + arreglo[i].ToString());
+            //}
+
+
+
+            Console.ReadKey();
         }
 
         private static void ArregloLista()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Threading;
 
@@ -8,10 +9,52 @@ namespace HolaMundo
     {   
         static void Main(string[] args)
         {
-            //Nombre
-            getNames();
-             //OpenFile();
-            //WriteFile();
+            
+        }
+
+        private static void ArregloLista()
+        {
+            var arreglo = new ArrayList();
+
+            ArrayList array = new ArrayList()
+            {
+                "Juan",
+                25,
+                "Dominican Republic",
+                "Sangre o+"
+
+            };
+
+            Console.WriteLine(array.Contains("Pedro"));
+
+            ////Writting
+            //arreglo.Add("Rehani");
+            //arreglo.Add(true);
+            //arreglo.Add(25);
+            //arreglo.Add(25.50);
+
+            ////Reading
+            //Read(arreglo);
+
+            ////Removing
+            ////arreglo.Remove("Rehani"); //Por elemento pasado
+            ////arreglo.RemoveAt(2); //Por indice
+            //arreglo.RemoveRange(0, 4); //Por rango
+
+            //Console.WriteLine("Despues de remover");
+            //Read(arreglo);
+
+           
+        }
+
+       
+
+        private static void Read(ArrayList arreglo)
+        {
+            for (int i = 0; i < arreglo.Count; i++)
+            {
+                Console.WriteLine("Datos:" + arreglo[i].ToString());
+            }
         }
 
         private static void OpenFile()

@@ -13,10 +13,17 @@ namespace HolaMundo
 
             cola.Add(25);
             cola.Add(30);
+            Console.WriteLine("Removiendo cola");
+            cola.Remove();
+            cola.Remove();
+            cola.Remove();
 
-            cola.Remove();
-            cola.Remove();
-            cola.Remove();
+            PilaArreglo pila = new PilaArreglo();
+            pila.Add(1);
+            pila.Add(2);
+            Console.WriteLine("Removiendo pila");
+            pila.Remove();
+            pila.Remove();
         }
 
         private static void Cola()

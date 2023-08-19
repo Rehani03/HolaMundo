@@ -9,7 +9,14 @@ namespace HolaMundo
     {   
         static void Main(string[] args)
         {
-            Pila();
+            ColaArreglo cola = new ColaArreglo();
+
+            cola.Add(25);
+            cola.Add(30);
+
+            cola.Remove();
+            cola.Remove();
+            cola.Remove();
         }
 
         private static void Cola()
